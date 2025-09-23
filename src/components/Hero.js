@@ -29,9 +29,9 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight">
           <span ref={elRef} className="inline-block" />
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl mx-auto leading-relaxed">
-          उड़ान में भाग लें और अविस्मरणीय यादें बनाएं<br />Participate in Udaan and create unforgettable memories
-        </p>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl mx-auto leading-relaxed">
+            आज की सफलता, कल की प्रेरणा<br />Today’s success, tomorrow’s inspiration
+          </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="/docs/brochure.pdf" className="inline-block bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg lg:text-xl transition duration-300 transform hover:scale-105 hover:shadow-lg border border-white/30">
             Brochure
