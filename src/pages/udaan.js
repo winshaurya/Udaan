@@ -16,7 +16,7 @@ export default function UdaanPage() {
         <div className="text-white max-w-[1100px] xl:px-[80px] lg:px-[50px] px-[30px] pt-[140px] pb-[80px] mx-auto">
           <h1 className="text-3xl sm:text-4xl font-semibold uppercase tracking-wide">Udaan</h1>
           <p className="mt-4 text-sm sm:text-base leading-relaxed opacity-95">
-            Udaan is SGSITS Indore’s annual convocation and celebration where provisional degrees, certificates,
+            Udaan is SGSITS Indore’s annual certificate and medal distribution ceremony, where certificates,
             and institute honors are formally conferred. It also recognizes outstanding student achievements in the presence of
             distinguished dignitaries, alumni, faculty, and families.
           </p>
@@ -25,14 +25,13 @@ export default function UdaanPage() {
             <section className="bg-white/10 backdrop-blur rounded-lg p-5">
               <h2 className="text-lg font-semibold">What is Udaan?</h2>
               <p className="mt-2 text-sm opacity-95">
-                A formal institute ceremony featuring degree distribution for graduating UG/PG students and felicitation of gold medalists.
-                The event is hosted annually as <span className="font-semibold">UdaanYYYY</span> (e.g., Udaan2025, Udaan2026).
+                A formal institute ceremony featuring certificate and medal distribution for graduating UG/PG students and felicitation of gold medalists.
               </p>
             </section>
             <section className="bg-white/10 backdrop-blur rounded-lg p-5">
               <h2 className="text-lg font-semibold">Who should attend?</h2>
               <ul className="mt-2 list-disc ml-5 text-sm opacity-95 space-y-1">
-                <li>Graduates of the year (UG/PG) receiving provisional degrees and certificates</li>
+                <li>Graduates of the year (UG/PG) receiving certificates</li>
                 <li>Gold medal awardees</li>
                 <li>Faculty, staff, family members, and invited alumni</li>
               </ul>

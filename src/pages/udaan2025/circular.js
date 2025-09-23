@@ -37,7 +37,7 @@ export default function Udaan2025Circular() {
               <p>Date: 16/Sept/2025</p>
               <h3 className="mt-2 font-semibold">Certificate and Gold medal distribution Ceremony, ‘UDAAN-2025’</h3>
               <p className="mt-2">
-                The institution, through the Keshav Purv Chatr Samanvay Mandal, is organizing the "Udaan-2025" program on Wednesday, October 8, 2025, at 2:00 PM. During this event, provisional degrees and other certificates will be formally distributed to the undergraduate and postgraduate students who graduated in 2025. Additionally, students who received gold medals in 2024 and 2025 will be honored.
+                The institution, through the Keshav Purv Chatr Samanvay Mandal, is organizing the "Udaan-2025" program on Wednesday, October 8, 2025, at 2:00 PM. During this event, certificates will be formally distributed to the undergraduate and postgraduate students who graduated in 2025, and gold medalists from 2024 and 2025 will be felicitated.
               </p>
               <p className="mt-2">The following dignitaries will be present at the event:</p>
               <ul className="list-disc ml-6 mt-2 space-y-1">

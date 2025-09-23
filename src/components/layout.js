@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     // Simulate initial loading and remove overlay to avoid blocking navigation
-    const t = setTimeout(() => setIsLoading(false), 3500);
+    const t = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(t);
   }, []);
   return (

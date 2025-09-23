@@ -14,7 +14,7 @@ export default function about() {
             Shri Govindram Seksaria Institute of Technology and Science (SGSITS), Indore, is a premier autonomous institute affiliated to RGPV and recognized by AICTE. Established in 1952, it is among Madhya Pradesh’s oldest engineering institutions, known for strong academics, research culture, and vibrant student life.
           </p>
           <p className="text-sm pb-[16px]">
-            Udaan is the institute’s annual convocation and celebration, recognizing graduates and distinguished achievers in the presence of eminent guests and alumni. Explore details and the latest circulars on the Udaan page.
+            Udaan is the institute’s annual certificate and medal distribution ceremony, honoring graduating students and outstanding achievers in the presence of eminent guests and alumni. The event recognizes academic and extracurricular excellence by presenting certificates to graduates and medals to top performers. Explore details and the latest circulars on the Udaan page.
           </p>
           <p className="text-sm pb-[16px]">
             SGSITS offers undergraduate and postgraduate programs across engineering and applied sciences, supported by experienced faculty, industry engagement, and active alumni. The campus hosts numerous technical and cultural events round the year, with Udaan as the flagship celebration.
@@ -33,7 +33,37 @@ export default function about() {
           backgroundSize: "cover",
         }}
       >
-        
+        {/* External portrait (flipped horizontally) */}
+        <img
+          id="neeteImage"
+          src="/images/Neetesh_Purohit_new.webp"
+          alt="Neetesh Purohit"
+          loading="eager"
+          decoding="sync"
+          fetchPriority="high"
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+          className="absolute top-0 right-0 h-full pointer-events-none"
+          style={{
+            transform: "scaleX(-1)",
+            transformOrigin: "center",
+            width: "100%", // fill the right column
+            height: "100%",
+            objectFit: "cover", // fill the area without letterboxing
+            zIndex: 20, // above background but below the left text (which is z-30)
+          }}
+          onError={() => {
+            try {
+              const el = document.getElementById('neeteImage');
+              if (el && el.src && !el.src.startsWith('https://')) {
+                // try remote copy only if local fails
+                el.src = 'https://www.sgsits.ac.in/images/Neetesh_Purohit_new.webp';
+              }
+            } catch (e) {
+              // ignore
+            }
+          }}
+        />
       </div>
     </div>
   );
