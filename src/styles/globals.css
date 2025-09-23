@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Masonry images baseline */
+.masonry-img {
+  @apply block w-full h-auto object-cover rounded-lg shadow-sm shadow-black/20;
+}
+
+/* small cycler for the hero is handled in React now */
+
+/* Vertical marquee */
+.marquee-outer {
+  position: relative;
+  overflow: hidden;
+}
+.marquee-track {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation-name: marqueeY;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.marquee-outer::-webkit-scrollbar { display: none; }
+.marquee-reverse { animation-name: marqueeYReverse; }
+
+@keyframes marqueeY {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+@keyframes marqueeYReverse {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.row {
+  height: 65px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  justify-content: flex-start;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.row:nth-child(1n) {
+  background: white;
+  min-height: 400px;
+  color: white;
+  font-weight: bold;
+}
+
+.row:nth-child(2n) {
+  background: wheat;
+  min-height: 600px;
+}
+
+.row:nth-child(3n) {
+  background: whitesmoke;
+  min-height: 500px;
+}
+
+.container {
+  height: calc(100vh - 20px);
+}
+
+.loader-anim {
+  animation: loaderAnim 3s forwards;
+}
+
+@keyframes loaderAnim {
+  0% {
+    width: 0%;
+    transform: translateX(0);
+  }
+  50% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(100%);
+  }
+}
+
+.letter-anim {
+  animation: letterAnim 1s ease-in-out forwards;
+  animation-delay: 1.7s;
+}
+
+@keyframes letterAnim {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-80px);
+  }
+}
+
+.letter-anim-two {
+  animation: letterAnim 1s ease-in-out forwards;
+  animation-delay: 1.9s;
+}
+
+@keyframes letterAnim {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-80px);
+  }
+}
+
+.letter-anim-three {
+  animation: letterAnim 1s ease-in-out forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes letterAnim {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-80px);
+  }
+}
+
+.circle-anim {
+  animation: circleAnim 1s ease-in-out forwards;
+ top: 0;
+ left: 0;
+    animation-delay: 2.4s;
+}
+
+@keyframes circleAnim {
+  from {
+    height: 100vh;
+  }
+  to {
+   height: 0;
+  }
+}
+
+.about-text::before {
+  display: block;
+  position: fixed;
+  top: 0;
+  /* left: 60%; */
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to bottom,#000 30%,rgba(255,255,255,0));
+  content: '';
+  z-index: 4;
+}
+
+.about-text::after {
+  display: block;
+  position: fixed;
+  top: auto;
+    bottom: 0;
+    transform: rotateZ(180deg);
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom,#000 30%,rgba(255,255,255,0));
+  content: '';
+  z-index: 4;
+}
+
+.about-cover::before {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 120%;
+  border-style: solid;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 9%;
+  transform: rotate(-17deg);
+}
+
+/* Site logo styling for brand wordmark */
+.site-logo {
+  font-family: 'FedEx', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  /* Larger, distinctive logo type */
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  /* small-caps like look by using font-variant (works with some fonts) */
+  font-variant-caps: small-caps;
+  /* subtle gradient and shadow for depth */
+  background: linear-gradient(90deg, #ffffff 0%, #cfcfcf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+  display: inline-block;
+  transform-origin: left center;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+/* Slightly increase on larger screens */
+@media (min-width: 1024px) {
+  .site-logo {
+    font-size: 42px;
+    letter-spacing: 3px;
+  }
+}
+
+
+
+
+.disapear-anim {
+  animation: disapear 0.5s forwards 10s;
+}
+
+@keyframes disapear {
+  from {
+    opacity: 1;
+  } 
+  to {
+    opacity: 0;
+  }
+}
