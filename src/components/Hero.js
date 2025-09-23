@@ -34,14 +34,14 @@ const Hero = () => {
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl mx-auto leading-relaxed">
             आज की सफलता, कल की प्रेरणा<br />Today’s success, tomorrow’s inspiration
           </p>
-  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-          <a href="/docs/brochure.pdf" className="inline-block bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg lg:text-xl transition duration-300 transform hover:scale-105 hover:shadow-lg border border-white/30">
-            Brochure
-          </a>
-          <a href="/docs/schedule.pdf" className="inline-block bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg lg:text-xl transition duration-300 transform hover:scale-105 hover:shadow-lg border border-white/30">
-            Schedule
-          </a>
-        </div>
+  <div className="flex flex-row gap-4 justify-center items-center mt-8 w-full max-w-xs mx-auto">
+    <a href="/docs/brochure.pdf" className="flex-1 bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-2 rounded-lg text-base transition duration-300 transform hover:scale-105 hover:shadow-lg border border-white/30 text-center">
+      Brochure
+    </a>
+    <a href="/docs/schedule.pdf" className="flex-1 bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-2 rounded-lg text-base transition duration-300 transform hover:scale-105 hover:shadow-lg border border-white/30 text-center">
+      Schedule
+    </a>
+  </div>
       </div>
     </section>
   );

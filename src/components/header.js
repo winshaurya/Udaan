@@ -121,7 +121,7 @@ export default function Header() {
           <a
             className={`${
               isOpen ? "translate-x-0 delay-[520ms]" : "translate-x-[120%] delay-[120ms]"
-            } transition-all ease-in-out duration-700 w-full py-[20px] text-[22px] font-semibold border-b-[2px] border-black text-center`}
+            } transition-all ease-in-out duration-700 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
             href="https://forms.gle/xirfNSVTatEpGbf96"
             target="_blank"
             rel="noopener noreferrer"
