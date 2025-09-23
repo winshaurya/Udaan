@@ -7,7 +7,7 @@ export default function UdaanPage() {
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-center bg-cover"
-        style={{ backgroundImage: "url('/images/image17.jpg')" }}
+        style={{ backgroundImage: "url('/images/sgsits_background.webp')" }}
       />
       <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
 
