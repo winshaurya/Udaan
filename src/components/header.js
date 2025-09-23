@@ -72,7 +72,16 @@ export default function Header() {
         </a>
       </div>
 
-      <div className="block sm:hidden relative z-[100001]">
+      <div className="sm:hidden flex items-center gap-3 relative z-[100001]">
+        {/* Mobile Register: bright white text, subtle glow, no padding */}
+        <a
+          href="https://forms.gle/xirfNSVTatEpGbf96"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white font-semibold drop-shadow-[0_0_8px_rgba(255,255,255,0.85)] hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] transition"
+        >
+          Register
+        </a>
         <Squash
           color={`${isOpen ? "#000" : "#fff"}`}
           toggled={isOpen}

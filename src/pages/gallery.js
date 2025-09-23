@@ -7,7 +7,10 @@ export default function Gallery() {
 
     // redirect to home - keep file but remove route access
     useEffect(() => {
-        if (router && router.replace) router.replace("/");
+        // Only redirect if we're not already at the root path to avoid a hard navigation to the same URL
+        if (router && router.replace && router.asPath !== "/") {
+            router.replace("/");
+        }
     }, [router]);
 
     const images = useMemo(

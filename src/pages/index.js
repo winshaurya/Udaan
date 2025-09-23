@@ -13,15 +13,16 @@ export default function Home() {
       {/* Redesigned section below hero: responsive 3-column cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {/* Mobile: single-column stacked (QR -> Event Details -> Quick Resources). On sm+ this becomes 3 columns. */}
           {/* QR Card */}
           <article className="flex items-stretch">
             <a href="https://forms.gle/xirfNSVTatEpGbf96" target="_blank" rel="noopener noreferrer" className="group w-full block rounded-xl overflow-hidden shadow-lg bg-white/5 border border-white/10 hover:scale-[1.01] transform transition">
               <div className="p-6 flex flex-col items-center">
-                <div className="w-60 h-60 bg-white rounded-md overflow-hidden flex items-center justify-center">
+                <div className="w-40 h-40 sm:w-60 sm:h-60 bg-white rounded-md overflow-hidden flex items-center justify-center">
                   <img src="/images/qr.png" alt="Register: QR code to open registration form" onError={(e)=>{e.currentTarget.onerror=null; e.currentTarget.src='/images/qr-placeholder.svg'}} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="mt-4 text-lg font-medium text-white">Register for Udaan</h3>
-                <p className="mt-2 text-sm text-white/70 text-center">Scan the QR or click the card to open the registration form.</p>
+                <p className="hidden sm:block mt-2 text-sm text-white/70 text-center">Scan the QR or click the card to open the registration form.</p>
                 <span className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-indigo-600 text-white rounded-md text-sm">Open form</span>
               </div>
             </a>
@@ -53,7 +54,7 @@ export default function Home() {
             </div>
           </article>
 
-          {/* Resources Card */}
+          {/* Quick Resources Card */}
           <article className="flex items-stretch">
             <div className="w-full rounded-xl overflow-hidden shadow-lg bg-white/5 border border-white/10 p-6 flex flex-col">
               <h3 className="text-xl font-semibold text-white">Quick Resources</h3>

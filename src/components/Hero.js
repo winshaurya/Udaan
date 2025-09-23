@@ -23,8 +23,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/sgsits_background.webp')" }}>
+    <section className="relative min-h-[70vh] sm:min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/sgsits_background.webp')" }}>
       <div className="absolute inset-0 bg-black opacity-50"></div>
+      {/* Bottom gradient: light (transparent) to dark to blend into next section */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-48 bg-gradient-to-b from-transparent via-black/60 to-black"></div>
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight">
           <span ref={elRef} className="inline-block" />
@@ -32,7 +34,7 @@ const Hero = () => {
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl mx-auto leading-relaxed">
             आज की सफलता, कल की प्रेरणा<br />Today’s success, tomorrow’s inspiration
           </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
           <a href="/docs/brochure.pdf" className="inline-block bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg lg:text-xl transition duration-300 transform hover:scale-105 hover:shadow-lg border border-white/30">
             Brochure
           </a>
