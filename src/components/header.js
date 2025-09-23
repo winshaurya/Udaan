@@ -48,7 +48,7 @@ export default function Header() {
       </Link>
 
       <div className="sm:flex hidden items-center gap-[40px] text-white">
-        <Link href="/">Events</Link>
+        <Link href="/udaan">Udaan</Link>
         <Link href="/gallery">Gallery</Link>
         <Link href="/about">About</Link>
       </div>
@@ -70,13 +70,14 @@ export default function Header() {
         <div
           className={`${isOpen ? "opacity-1" : "opacity-0 delay-[400ms]"} w-full transition-all ease-in-out duration-200 flex items-center justify-center flex-col`}
         >
+          
           <Link
             className={`${
-              isOpen ? "translate-x-0 delay-[290ms]" : "translate-x-[120%] delay-[350ms]"
+              isOpen ? "translate-x-0 delay-[320ms]" : "translate-x-[120%] delay-[320ms]"
             } transition-all ease-in-out duration-700 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
-            href="/"
+            href="/udaan"
           >
-            Events
+            Udaan
           </Link>
           <Link
             className={`${

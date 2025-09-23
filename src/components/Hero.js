@@ -32,9 +32,9 @@ const Hero = () => {
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl mx-auto leading-relaxed">
           Discover amazing events and create unforgettable memories
         </p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg lg:text-xl transition duration-300 transform hover:scale-105 hover:shadow-lg">
-          Explore Events
-        </button>
+        <a href="/udaan" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg lg:text-xl transition duration-300 transform hover:scale-105 hover:shadow-lg">
+          Explore Udaan
+        </a>
       </div>
     </section>
   );
