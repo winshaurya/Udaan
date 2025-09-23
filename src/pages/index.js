@@ -58,9 +58,11 @@ export default function Home() {
           <article className="flex items-stretch">
             <div className="w-full rounded-xl overflow-hidden shadow-lg bg-white/5 border border-white/10 p-6 flex flex-col">
               <h3 className="text-xl font-semibold text-white">Quick Resources</h3>
-              <ul className="mt-4 space-y-3 text-sm">
-                <li><a href="/docs/brochure.pdf" className="text-white/90 hover:underline">Download brochure (PDF)</a></li>
-                <li><a href="/docs/schedule.pdf" className="text-white/90 hover:underline">View schedule (PDF)</a></li>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <a href="/docs/brochure.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Brochure (PDF)</a>
+                <a href="/docs/schedule.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Schedule (PDF)</a>
+              </div>
+              <ul className="mt-3 space-y-3 text-sm">
                 <li><a href="/gallery" className="text-white/90 hover:underline">Photo gallery</a></li>
                 <li><a href="/udaan2025/circular" className="text-white/90 hover:underline">Circular & guidelines</a></li>
               </ul>

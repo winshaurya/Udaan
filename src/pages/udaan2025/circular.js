@@ -13,22 +13,44 @@ export default function Udaan2025Circular() {
               <p>Ref: Dean/ARSD/UDAAN/001 सूचना</p>
               <h3 className="mt-3 font-semibold">प्रमाण पत्र एवं स्वर्ण पदक वितरण समारोह, ‘उड़ान-2025’</h3>
               <p className="mt-2">
-                संस्‍था न द्वारा केशव पूर्व छा त्र समन्वय मंडल के मा ध्यम से दि नां क 08 अक्टूबर 2025 (बुधवा र) को अपरा न्‍ह 02:00 बजे उड़ा न-2025 का र्यक्रम का आयो जन कि या जा रहा है | इसके अंतर्गत वर्ष 2025 में उत्ती र्ण स्नातक और स्नातको त्तर छा त्र-छा त्रा ओं को प्रो वि जनल डि ग्री एवं अन्‍य प्रमा ण पत्र का वि धि वत वि तरण कि या जा येगा , साथ ही , वर्ष 2024 एवं 2025 में स्‍वर्ण पदक प्रा प्‍त करने वा ले छा त्र-छा त्रा ओं का सम्मा न कि या जा येगा ।
+                संस्थान द्वारा केशव पूर्व छात्र समन्वय मंडल के माध्यम से दिनांक 08 अक्टूबर 2025 (बुधवार) को अपराह्न 02:00 बजे 'उड़ान-2025' कार्यक्रम का आयोजन किया जा रहा है। इस कार्यक्रम के अंतर्गत वर्ष 2025 में उत्तीर्ण स्नातक एवं स्नातकोत्तर छात्र-छात्राओं को प्रोविजनल डिग्री एवं अन्य प्रमाण पत्र विधिवत वितरित किए जाएंगे। साथ ही, वर्ष 2024 एवं 2025 में स्वर्ण पदक प्राप्त करने वाले छात्र-छात्राओं का भी सम्मान किया जाएगा।
               </p>
-              <p className="mt-2">इस का र्यक्रम में नि म्‍नलि खि त गणमा न्‍य व्‍यक्ति उपस्थि त रहेंगे –</p>
-              <ul className="list-disc ml-6 mt-2 space-y-1">
-                <li>
-                  <span className="font-semibold">मुख्यअति थि:</span> मा ननी य मंत्री जी (तकनी की शि क्षा , उच्‍च शि क्षा एवं आयुष) श्री मा न इंदर सिं ह जी परमा र
-                </li>
-                <li>
-                  <span className="font-semibold">वि शि ष्‍ट अति थि:</span> संस्‍था पक, पर्सि सटेंट सि स्‍टम लि मि टेड डॉ आनन्‍द देशपा ण्‍डे; अध्‍यक्ष, रा ष्‍ट्री य पुस्‍तक न्‍या स प्रो मि लि न्‍द मरा ठे
-                </li>
-                <li>
-                  <span className="font-semibold">वि शेष अति थि:</span> मा ननी य कुलगुरू, रा जी वगां धी प्रौ द्यो गि की वि श्‍ववि द्या लय, भो पा ल प्रो . रा जी व त्रि पा ठी; मा ननी य कुलगुरू, देवी अहि ल्‍या वि श्‍ववि द्या लय, इन्‍दौर प्रो . रा केश सिं घई; संस्‍था न के प्रति ष्ठि त पूर्व छा त्र पद्मश्री प्रो डी बी फा टक
-                </li>
-              </ul>
+              <table className="w-full mt-4 text-sm border border-white/30">
+                <tbody>
+                  <tr className="border-b border-white/30">
+                    <td className="font-semibold p-2">मुख्य अतिथि</td>
+                    <td className="p-2">माननीय मंत्री जी (तकनीकी शिक्षा, उच्च शिक्षा एवं आयुष)</td>
+                    <td className="p-2">श्री इंदर सिंह जी परमार</td>
+                  </tr>
+                  <tr className="border-b border-white/30">
+                    <td className="font-semibold p-2">विशिष्ट अतिथि</td>
+                    <td className="p-2">संस्थापक, पर्सिस्टेंट सिस्टम्स लिमिटेड</td>
+                    <td className="p-2">डॉ. आनन्द देशपांडे</td>
+                  </tr>
+                  <tr className="border-b border-white/30">
+                    <td className="font-semibold p-2"></td>
+                    <td className="p-2">अध्यक्ष, राष्ट्रीय पुस्तक न्यास</td>
+                    <td className="p-2">प्रो. मिलिंद मराठे</td>
+                  </tr>
+                  <tr className="border-b border-white/30">
+                    <td className="font-semibold p-2">विशेष अतिथि</td>
+                    <td className="p-2">माननीय कुलपति, राजीव गांधी प्रौद्योगिकी विश्वविद्यालय, भोपाल</td>
+                    <td className="p-2">प्रो. राजीव त्रिपाठी</td>
+                  </tr>
+                  <tr className="border-b border-white/30">
+                    <td className="font-semibold p-2"></td>
+                    <td className="p-2">माननीय कुलपति, देवी अहिल्या विश्वविद्यालय, इंदौर</td>
+                    <td className="p-2">प्रो. राकेश सिंघई</td>
+                  </tr>
+                  <tr>
+                    <td className="font-semibold p-2"></td>
+                    <td className="p-2">संस्थान के प्रतिष्ठित पूर्व छात्र</td>
+                    <td className="p-2">पद्मश्री प्रो. डी. बी. फाटक</td>
+                  </tr>
+                </tbody>
+              </table>
               <p className="mt-2">
-                तद्नु सार वर्ष 2024 एवं 2025 के समस्त सम्बंधि त छा त्र छा त्रा ए उपरो क्त का र्यक्रम में भा ग लेने हेतु अपना पंजी करण दि नां क 20 से 25 सि तम्‍बर, 2025 तक रा त्री 10:00 बजे तक नी चे दि ये गये क्‍यूआर को ड द्वारा सुनि श्चि त करें।
+                तदनुसार, वर्ष 2024 एवं 2025 के समस्त संबंधित छात्र-छात्राएँ उपरोक्त कार्यक्रम में भाग लेने हेतु अपना पंजीकरण दिनांक 20 से 25 सितम्बर, 2025 तक रात्रि 10:00 बजे तक नीचे दिए गए क्यूआर कोड द्वारा सुनिश्चित करें।
               </p>
             </section>
 
@@ -58,7 +80,7 @@ export default function Udaan2025Circular() {
 
             <section className="pt-4 border-t border-white/20">
               <p className="mt-2 font-semibold">DEAN (ARSD)</p>
-              <p className="mt-2">कृपया पंजी करण के लि ए इस QR को ड को स्कैन करें / Please scan this QR code to register</p>
+              <p className="mt-2">कृपया पंजीकरण के लिए इस QR कोड को स्कैन करें</p>
               <div className="mt-3 p-4 border border-dashed border-white/30 rounded-md text-center opacity-90">
                 <img
                   src="/images/qr.png"
@@ -72,7 +94,7 @@ export default function Udaan2025Circular() {
                 />
                 <p id="qr-fallback" style={{ display: 'none' }}>QR image not found. Please provide /public/images/qr.png.</p>
               </div>
-              <p className="mt-4">संपर्क सूत्र : प्रो. प्रनवेश गनई, अध्यक्ष, प्रवेश विभाग | मो. +91 8989006089 | ईमेल : pganai@sgsits.ac.in</p>
+              <p className="mt-4">संपर्क सूत्र : प्रो. प्रनवेश गनई, अध्यक्ष, प्रवेश विभाग<br />मो. : +91 8989006089<br />ईमेल : pganai@sgsits.ac.in</p>
               <p className="mt-2">CC: The Director’s Secretariat – With a request to inform the Director</p>
             </section>
           </div>
