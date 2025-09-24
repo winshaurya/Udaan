@@ -1,31 +1,12 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function UdaanPage() {
-  const videoRef = useRef(null);
-  const [showPlayOverlay, setShowPlayOverlay] = useState(false);
-
-  useEffect(() => {
-    // Try to play with sound; if browser blocks autoplay with sound, show overlay to let user start it
-    const v = videoRef.current;
-    if (!v) return;
-
-    // First try to play muted (most browsers allow this), then unmute
-    v.muted = true;
-    const tryPlay = v.play();
-    if (tryPlay && typeof tryPlay.then === 'function') {
-      tryPlay
-        .then(() => {
-          // attempt to unmute and play with sound
-          v.muted = false;
-          const p2 = v.play();
-          if (p2 && typeof p2.then === 'function') {
-            p2.then(() => setShowPlayOverlay(false)).catch(() => setShowPlayOverlay(true));
-          }
-        })
-        .catch(() => setShowPlayOverlay(true));
-    }
-  }, []);
+  // YouTube embed setup (poster-first, privacy-enhanced)
+  const YT_ID = "XlawpmBt_cI"; // from https://youtu.be/XlawpmBt_cI
+  const YT_THUMB = `https://i.ytimg.com/vi/${YT_ID}/hqdefault.jpg`;
+  const nocookieSrc = `https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`;
+  const [playerActive, setPlayerActive] = useState(false);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* Background image (SGSITS library image) */}
@@ -69,44 +50,34 @@ export default function UdaanPage() {
                 <h2 className="text-sm sm:text-base font-semibold mb-3">Rehearsal of Academic Procession on 8th Sept 2025 — UDAAN-2025</h2>
                 <div className="mx-auto w-full">
                   <div className="w-full aspect-video rounded-md overflow-hidden bg-black relative mt-2">
-                    {/* videoRef used to try autoplay with sound; fallback overlay shown if autoplay blocked */}
-                    <video
-                      ref={videoRef}
-                      controls
-                      autoPlay
-                      loop
-                      playsInline
-                      preload="metadata"
-                      poster="/images/qr-placeholder.svg"
-                      className="w-full h-full object-cover"
-                    >
-                      {/* Real video file in public/videos/ */}
-                      <source src="/videos/prepvideo.mp4" type="video/mp4" />
-                      {/* Optional captions track (create /public/videos/prepvideo.en.vtt if you have captions) */}
-                      <track kind="captions" src="/videos/prepvideo.en.vtt" srclang="en" label="English" />
-                      <p className="text-sm">Your browser does not support HTML5 video. <a href="/videos/prepvideo.mp4">Download the video</a>.</p>
-                    </video>
-                    {/* Overlay: shown when autoplay with sound is blocked; user can tap to start with sound */}
-                    {showPlayOverlay && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                    {/* YouTube iframe: starts muted (autoplay allowed), overlay button will switch to unmuted autoplay */}
+                    <div className="w-full h-full relative">
+                      {!playerActive ? (
                         <button
-                          onClick={() => {
-                            const v = videoRef?.current;
-                            if (!v) return;
-                            v.muted = false;
-                            v.volume = 0.9;
-                            const p = v.play();
-                            if (p && typeof p.then === 'function') {
-                              p.then(() => setShowPlayOverlay(false)).catch(() => setShowPlayOverlay(true));
-                            }
-                          }}
-                          className="px-4 py-2 bg-white text-black rounded-md font-medium shadow-md"
-                          aria-label="Play with sound"
+                          onClick={() => setPlayerActive(true)}
+                          className="w-full h-full block relative focus:outline-none"
+                          aria-label="Play video"
                         >
-                          Play with sound
+                          <img src={YT_THUMB} alt="Video thumbnail" className="w-full h-full object-cover" />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="rounded-full bg-black/60 p-4">
+                              <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                          </div>
                         </button>
-                      </div>
-                    )}
+                      ) : (
+                        <iframe
+                          src={nocookieSrc}
+                          title="Rehearsal of Academic Procession"
+                          frameBorder="0"
+                          allow="autoplay; encrypted-media; fullscreen"
+                          allowFullScreen
+                          className="w-full h-full"
+                        />
+                      )}
+                      {/* Fallback link for browsers that block iframes */}
+                      <noscript className="absolute bottom-2 left-2 text-xs text-white">Watch on <a href={`https://youtu.be/${YT_ID}`} className="underline">YouTube</a></noscript>
+                    </div>
                   </div>
                 </div>
               </div>
