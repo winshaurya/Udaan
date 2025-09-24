@@ -95,33 +95,33 @@ export default function Header() {
 
       <div
         className={`${
-          isOpen ? "top-0" : "top-[-100vh] delay-[.7s]"
-        } flex justify-center flex-col px-[20px] transition-all ease-in-out duration-500 absolute w-screen h-screen bg-white z-[100000] left-0`}
+          isOpen ? "top-0" : "top-[-100vh] delay-[.5s]"
+        } flex justify-center flex-col px-[20px] transition-all ease-in-out duration-250 absolute w-screen h-screen bg-white z-[100000] left-0`}
       >
         <div
-          className={`${isOpen ? "opacity-100" : "opacity-0 delay-[400ms]"} w-full transition-all ease-in-out duration-200 flex items-center justify-center flex-col`}
+          className={`${isOpen ? "opacity-100" : "opacity-0 delay-[80ms]"} w-full transition-all ease-in-out duration-150 flex items-center justify-center flex-col`}
         >
           
           <Link
             className={`${
-              isOpen ? "translate-x-0 delay-[320ms]" : "translate-x-[120%] delay-[320ms]"
-            } transition-all ease-in-out duration-700 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
+              isOpen ? "translate-x-0 delay-[80ms]" : "translate-x-[120%] delay-[80ms]"
+            } transition-all ease-in-out duration-250 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
             href="/udaan"
           >
             Udaan
           </Link>
           <Link
             className={`${
-              isOpen ? "translate-x-0 delay-[440ms]" : "translate-x-[120%] delay-[200ms]"
-            } transition-all ease-in-out duration-700 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
+              isOpen ? "translate-x-0 delay-[160ms]" : "translate-x-[120%] delay-[160ms]"
+            } transition-all ease-in-out duration-250 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
             href="/about"
           >
             About
           </Link>
           <a
             className={`${
-              isOpen ? "translate-x-0 delay-[520ms]" : "translate-x-[120%] delay-[120ms]"
-            } transition-all ease-in-out duration-700 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
+              isOpen ? "translate-x-0 delay-[240ms]" : "translate-x-[120%] delay-[240ms]"
+            } transition-all ease-in-out duration-250 relative after:text-[30px] after:transform after:rotate-[-45deg] w-full after:content-['→'] after:absolute after:right-0 after:top-[12px] py-[20px] text-[22px] font-semibold border-b-[2px] border-black`}
             href="https://forms.gle/xirfNSVTatEpGbf96"
             target="_blank"
             rel="noopener noreferrer"

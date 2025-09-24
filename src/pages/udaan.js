@@ -1,49 +1,56 @@
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function UdaanPage() {
+  const videoRef = useRef(null);
+  const [showPlayOverlay, setShowPlayOverlay] = useState(false);
+
+  useEffect(() => {
+    // Try to play with sound; if browser blocks autoplay with sound, show overlay to let user start it
+    const v = videoRef.current;
+    if (!v) return;
+
+    // First try to play muted (most browsers allow this), then unmute
+    v.muted = true;
+    const tryPlay = v.play();
+    if (tryPlay && typeof tryPlay.then === 'function') {
+      tryPlay
+        .then(() => {
+          // attempt to unmute and play with sound
+          v.muted = false;
+          const p2 = v.play();
+          if (p2 && typeof p2.then === 'function') {
+            p2.then(() => setShowPlayOverlay(false)).catch(() => setShowPlayOverlay(true));
+          }
+        })
+        .catch(() => setShowPlayOverlay(true));
+    }
+  }, []);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background image */}
+      {/* Background image (SGSITS library image) */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-center bg-cover"
-        style={{ backgroundImage: "url('/images/sgsits_background.webp')", backgroundColor: '#000' }}
+        // try local SVG first, then local JPG, then remote JPG
+        style={{ backgroundImage: "url('/images/library-main-section.svg'), url('/images/library-main-section.jpg'), url('https://www.sgsits.ac.in/images/speasyimagegallery/albums/10/images/library-main-section.jpg')", backgroundColor: '#000' }}
       />
       <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-[1]">
-        <div className="text-white max-w-[1100px] xl:px-[80px] lg:px-[50px] px-[30px] pt-[140px] pb-[80px] mx-auto">
-          <h1 className="text-3xl sm:text-4xl font-semibold uppercase tracking-wide">Udaan</h1>
+  <div className="text-white max-w-[1100px] md:max-w-[50%] px-3 sm:px-4 md:px-6 lg:px-8 pt-20 sm:pt-28 md:pt-36 pb-12 mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-wide">Udaan</h1>
           <div className="mt-4 text-sm sm:text-base leading-relaxed opacity-95 space-y-2">
-            <p>प्रमाण पत्र व स्वर्ण पदक वितरण समारोह — उड़ान।</p>
-            <p>Certificate and gold‑medal distribution ceremony — Udaan.</p>
-            <p>संस्थान द्वारा वर्ष 2025 के स्नातक/स्नातकोत्तर छात्रों को प्रोविज़नल डिग्री व प्रमाण पत्र प्रदान किए जाएंगे।</p>
-            <p>Provisional degrees and certificates will be formally distributed to 2025 graduates.</p>
-          </div>
+            <p>प्रमाण पत्र व स्वर्ण पदक वितरण समारोह।</p>
+            <p>Certificate and gold‑medal distribution ceremony.</p>
+            </div>
 
-          <div className="mt-8 grid md:grid-cols-2 gap-6">
-            <section className="bg-white/10 backdrop-blur rounded-lg p-5">
-              <h2 className="text-lg font-semibold">Who should attend?</h2>
-              <ul className="mt-2 list-disc ml-5 text-sm opacity-95 space-y-2">
-                <li>
-                  <p>स्नातक/स्नातकोत्तर (2025) जिन्हें प्रमाण पत्र मिलेंगे।</p>
-                  <p>Graduates (UG/PG, 2025) receiving certificates.</p>
-                </li>
-                <li>
-                  <p>स्वर्ण पदक प्राप्तकर्ता।</p>
-                  <p>Gold medal awardees.</p>
-                </li>
-                <li>
-                  <p>शिक्षक, कर्मचारी, परिवार एवं आमंत्रित पूर्व छात्र।</p>
-                  <p>Faculty, staff, family members, and invited alumni.</p>
-                </li>
-              </ul>
-            </section>
-
-            <section className="bg-white/10 backdrop-blur rounded-lg p-5">
-              <h2 className="text-lg font-semibold">Udaan 2025 — At a glance</h2>
-              <ul className="mt-2 text-sm opacity-95 space-y-2">
+          <div className="mt-6 grid md:grid-cols-2 gap-4 items-start">
+            {/* Left: At a glance */}
+            <section className="col-span-2 md:col-span-1 bg-white/10 backdrop-blur rounded-lg p-4 sm:p-5 w-full">
+              <h2 className="text-base sm:text-lg font-semibold">Udaan 2025 — At a glance</h2>
+              <ul className="mt-2 text-xs sm:text-sm opacity-95 space-y-2">
                 <li><span className="font-semibold">Date & Time:</span> Wednesday, 08 Oct 2025, 2:00 PM</li>
                 <li>
                   <p>स्थल: SGSITS, इन्दौर</p>
@@ -55,7 +62,60 @@ export default function UdaanPage() {
                 </li>
               </ul>
             </section>
-            <section className="bg-white/10 backdrop-blur rounded-lg p-5">
+
+            {/* Video holder: small on desktop (one column), full width on mobile */}
+            <section className="col-span-2 md:col-span-1 bg-white/10 backdrop-blur rounded-lg p-2 flex items-center justify-center">
+              <div className="w-full">
+                <h2 className="text-sm sm:text-base font-semibold mb-3">Rehearsal of Academic Procession on 8th Sept 2025 — UDAAN-2025</h2>
+                <div className="mx-auto w-full">
+                  <div className="w-full aspect-video rounded-md overflow-hidden bg-black relative mt-2">
+                    {/* videoRef used to try autoplay with sound; fallback overlay shown if autoplay blocked */}
+                    <video
+                      ref={videoRef}
+                      controls
+                      autoPlay
+                      loop
+                      playsInline
+                      preload="metadata"
+                      poster="/images/qr-placeholder.svg"
+                      className="w-full h-full object-cover"
+                    >
+                      {/* Real video file in public/videos/ */}
+                      <source src="/videos/prepvideo.mp4" type="video/mp4" />
+                      {/* Optional captions track (create /public/videos/prepvideo.en.vtt if you have captions) */}
+                      <track kind="captions" src="/videos/prepvideo.en.vtt" srclang="en" label="English" />
+                      <p className="text-sm">Your browser does not support HTML5 video. <a href="/videos/prepvideo.mp4">Download the video</a>.</p>
+                    </video>
+                    {/* Overlay: shown when autoplay with sound is blocked; user can tap to start with sound */}
+                    {showPlayOverlay && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                        <button
+                          onClick={() => {
+                            const v = videoRef?.current;
+                            if (!v) return;
+                            v.muted = false;
+                            v.volume = 0.9;
+                            const p = v.play();
+                            if (p && typeof p.then === 'function') {
+                              p.then(() => setShowPlayOverlay(false)).catch(() => setShowPlayOverlay(true));
+                            }
+                          }}
+                          className="px-4 py-2 bg-white text-black rounded-md font-medium shadow-md"
+                          aria-label="Play with sound"
+                        >
+                          Play with sound
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* How to participate - placed below the grid so on mobile it appears after the video */}
+          <div className="mt-4">
+            <section className="bg-white/10 backdrop-blur rounded-lg p-4 sm:p-5">
               <h2 className="text-lg font-semibold">How to participate</h2>
               <div className="mt-2 text-sm opacity-95">
                 <p>कृपया आधिकारिक परिपत्र पढ़ें और पंजीकरण के लिए QR कोड स्कैन करें।</p>
@@ -64,7 +124,7 @@ export default function UdaanPage() {
             </section>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/udaan2025/circular" className="px-4 py-2 rounded-md bg-white text-black font-medium hover:bg-gray-200 transition-colors">
               Go to Udaan
             </Link>
