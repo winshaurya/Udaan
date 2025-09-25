@@ -36,7 +36,11 @@ export default function Home() {
               <dl className="mt-4 text-sm text-white/70 space-y-2">
                 <div>
                   <dt className="font-medium">Date</dt>
-                  <dd>April 26, 2025</dd>
+                  <dd>October 8, 2025</dd>
+                </div>
+                <div>
+                  <dt className="font-medium">Last date to fill form</dt>
+                  <dd>September 30, 2025</dd>
                 </div>
                 <div>
                   <dt className="font-medium">Time</dt>
@@ -59,6 +63,7 @@ export default function Home() {
             <div className="w-full rounded-xl overflow-hidden shadow-lg bg-white/5 border border-white/10 p-6 flex flex-col">
               <h3 className="text-xl font-semibold text-white">Quick Resources</h3>
               <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <a href="/docs/UDAAN%202025%20registration%20date%20extended.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Registration date extended (PDF)</a>
                 <a href="/docs/brochure.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Brochure (PDF)</a>
                 <a href="/docs/schedule.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Schedule (PDF)</a>
               </div>

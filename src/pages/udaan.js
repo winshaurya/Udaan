@@ -21,6 +21,11 @@ export default function UdaanPage() {
       {/* Content */}
       <div className="relative z-[1]">
   <div className="text-white max-w-[1100px] md:max-w-[50%] px-3 sm:px-4 md:px-6 lg:px-8 pt-20 sm:pt-28 md:pt-36 pb-12 mx-auto">
+        {/* Announcement: registration date extended */}
+        <div className="mb-4 p-3 rounded-md bg-yellow-400/10 border border-yellow-600 text-yellow-100">
+          <p className="text-sm font-semibold">Registration deadline extended</p>
+          <p className="text-sm mt-1">Last date to fill the registration form is now <strong>30 September 2025</strong>. Please see the updated notice: <a href="/docs/UDAAN%202025%20registration%20date%20extended.pdf" className="underline font-medium">Registration date extended (PDF)</a></p>
+        </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-wide">Udaan</h1>
           <div className="mt-4 text-sm sm:text-base leading-relaxed opacity-95 space-y-2">
             <p>प्रमाण पत्र व स्वर्ण पदक वितरण समारोह।</p>
