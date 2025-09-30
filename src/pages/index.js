@@ -66,6 +66,7 @@ export default function Home() {
                 <a href="/docs/UDAAN%202025%20registration%20date%20extended.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Registration date extended (PDF)</a>
                 <a href="/docs/brochure.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Brochure (PDF)</a>
                 <a href="/docs/schedule.pdf" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Schedule (PDF)</a>
+                <a href="/docs/dresscode.docx" className="flex-1 min-w-[120px] text-white/90 hover:underline text-center bg-white/10 rounded px-2 py-2">Dress code</a>
               </div>
               <ul className="mt-3 space-y-3 text-sm">
                 <li><a href="/gallery" className="text-white/90 hover:underline">Photo gallery</a></li>
