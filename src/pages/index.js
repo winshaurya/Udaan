@@ -51,8 +51,8 @@ export default function Home() {
                   <dd>SGSITS Auditorium</dd>
                 </div>
                 <div>
-                  <dt className="font-medium">Dress code</dt>
-                  <dd>White / off-white kurta-pyjama (boys) or salwar-kurta / saree (girls).</dd>
+                  <dt className="text-white font-semibold drop-shadow-[0_0_6px_rgba(255,255,255,0.65)]">Dress code</dt>
+                  <dd className="text-white font-semibold drop-shadow-[0_0_6px_rgba(255,255,255,0.65)] transition">White / off-white kurta-pyjama (boys) or salwar-kurta / saree (girls). Half-jacket provided at registration.</dd>
                 </div>
               </dl>
               <div className="mt-auto pt-4">
