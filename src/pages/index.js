@@ -50,6 +50,10 @@ export default function Home() {
                   <dt className="font-medium">Location</dt>
                   <dd>SGSITS Auditorium</dd>
                 </div>
+                <div>
+                  <dt className="font-medium">Dress code</dt>
+                  <dd>White / off-white kurta-pyjama (boys) or salwar-kurta / saree (girls).</dd>
+                </div>
               </dl>
               <div className="mt-auto pt-4">
                 <a href="/docs/brochure.pdf" className="inline-block px-4 py-2 mr-3 bg-transparent border border-white/20 text-white rounded-md text-sm hover:bg-white/5">Brochure</a>

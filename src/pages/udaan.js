@@ -5,8 +5,10 @@ export default function UdaanPage() {
   // YouTube embed setup (poster-first, privacy-enhanced)
   const YT_ID = "XlawpmBt_cI"; // from https://youtu.be/XlawpmBt_cI
   const YT_THUMB = `https://i.ytimg.com/vi/${YT_ID}/hqdefault.jpg`;
-  const nocookieSrc = `https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`;
-  const [playerActive, setPlayerActive] = useState(false);
+  // autoplay=1 and mute=1 so the video will start automatically in most browsers
+  const nocookieSrc = `https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1`;
+  // start with player active so iframe is rendered and autoplays (muted)
+  const [playerActive, setPlayerActive] = useState(true);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* Background image (SGSITS library image) */}
@@ -87,6 +89,17 @@ export default function UdaanPage() {
           {/* How to participate - placed below the grid so on mobile it appears after the video */}
           <div className="mt-4">
             <section className="bg-white/10 backdrop-blur rounded-lg p-4 sm:p-5">
+              <h2 className="text-lg font-semibold">Dress code</h2>
+              <div className="mt-2 text-sm opacity-95 space-y-2">
+                <p><strong>Boys:</strong> Traditional Kurta and Pyjama / Jeans. Kurta preferably of white or off-white colour.</p>
+                <p><strong>Girls:</strong> Salwar kurta / Saree — preferably of white or off-white colour.</p>
+                <p>The half-jacket will be provided at the registration desk on the same day itself.</p>
+                <hr className="my-2 border-white/10" />
+                <p className="text-sm"> लड़कों के लिए कुर्ता-पायजामा/जीन्स। लड़कियों के लिए सलवार-कुर्ता/साड़ी।</p>
+              </div>
+            </section>
+
+            <section className="mt-4 bg-white/10 backdrop-blur rounded-lg p-4 sm:p-5">
               <h2 className="text-lg font-semibold">How to participate</h2>
               <div className="mt-2 text-sm opacity-95">
                 <p>कृपया आधिकारिक परिपत्र पढ़ें और पंजीकरण के लिए QR कोड स्कैन करें।</p>
